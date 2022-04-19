@@ -1,0 +1,280 @@
+<!-- let API = "AIzaSyA2YZKo5xi7ONczJP8MGGl2a98QQn-nC5o"; -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+    <title>Document</title>
+    <style>
+   
+#nav{
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px 0px 20px;
+    color: white;
+    background-color: red;
+}
+
+#options{
+          width: 250px;
+          display: flex;
+          /* border: 1px solid rebeccapurple; */
+          /* margin-left: 300px; */
+          justify-content: space-between;
+          height: 100%;
+          /* border: 1px solid white; */
+          margin-top: 30px;
+      }
+      #options>img{
+          width: 30px;
+          height: 30px;
+          border-radius: 20px;
+          cursor: pointer;
+      }
+    #searchResults{
+        display: grid;
+        grid-template-columns:repeat(4,1fr);
+        gap: 30px;
+        margin-top: 10px;
+        /* width: 80%; */
+      height: 100%;
+      
+     
+    }
+    #searchResults:hover{
+   
+        overflow: scroll;
+     
+    }
+   
+    #container{
+      display: flex;
+      justify-content: space-between;
+      height: 550px;
+      overflow: hidden;
+    }
+    #searchResult >div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #right{
+        margin:20px;
+    }
+    #right>input{
+        width: 450px;
+        height: 20px;
+        margin: 10px;
+    }
+    button{
+        padding: 5px;
+        border-radius: 5px;
+        border: 5px;
+        margin-left: 0px;
+    }
+/* -------------------------------- */
+#sidemenu{
+       
+         overflow: hidden;
+          background-color: #fff;
+      
+         
+      }
+      #sidemenu:hover{
+        overflow: scroll;
+      }
+      .links{
+          display: block;
+ 
+          padding: 10px 20px;
+          display: flex;
+          align-items: center;
+          color: #242424;
+          font-size: 15px;
+          font-weight: bolder;
+          text-decoration: none;
+      }
+      .links:hover
+      {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+/* ------------------------------------------------ */
+#filters{
+          
+         
+          top: 60px;
+        
+          height: 60px;
+          background-color: #fff;
+          padding: 0 20px;
+          border-top: 1px solid #dbdbdb;
+          border-bottom: 1px solid #dbdbdb;
+          display: flex;
+          align-items: center;
+          overflow-x: hidden;
+          /* overflow: hidden; */
+      }
+      #filters:hover{
+        overflow-x: scroll;
+      }
+      #filter-opt{
+        flex: 0 0 auto;
+        padding: 10px 20px;
+        border-radius: 50px;
+        background-color: #f0f0f0;
+        border: 1px solid #dbdbdb;
+        text-transform: capitalize;
+        margin-right: 20px;
+        color: #242424;
+        font-size: 15px;
+        cursor: pointer;
+      }
+      #filter-opt:hover{
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      #box{
+        width: 84%;
+       height: 100%;
+      }
+      /* --------------------------------------- */
+      #searchResults>div{
+        text-align: center;
+
+      }
+
+    </style>
+  </head>
+  <body>
+      <div id="nav">
+        <h1>Youtube....loding !</h1>
+        <div id="right">
+            <input type="text" style="margin-right: 0px;" id="searchTerm" placeholder="Search Videos..................."/>
+        
+            <button onclick="searchVideos()"><span class="iconify" data-icon="akar-icons:search" 
+              style="width: 35px; height: 13px;"></span></button>
+        </div>
+        
+        <div id="options">
+          <span class="iconify" data-icon="bx:bx-camera-movie"  style="width: 45px; height: 26px; cursor: pointer;"></span>
+          <span class="iconify" data-icon="fe:app-menu"  style="width: 45px; height: 26px; cursor: pointer;"></span>
+          <span class="iconify" data-icon="carbon:notification-new"  style="width: 45px; height: 26px; cursor: pointer;"></span>
+          <img src="https://media.istockphoto.com/photos/renewable-energy-and-sustainable-development-picture-id1186330948?k=20&m=1186330948&s=612x612&w=0&h=5aNPCcQ8FcZraX44PEhb2mqcHkow2xMITJMHdh28xNg=" alt="">
+
+      </div>
+      </div>
+      <div id="container">
+
+        <!-- <div id="list"></div> -->
+        <div id="sidemenu">
+          <a href="#" class="links active"><i class="fa fa-home" style="font-size:24px;margin: 15px; "></i> Home</a>
+          <a href="#" class="links"><i class="fa fa-compass" style="font-size:24px;margin: 15px;"></i>Explore</a>
+          <a href="#" class="links"><span class="iconify" data-icon="mdi:youtube-subscription"style="font-size:24px;margin: 15px;"></span>Subscriptions</a>
+          <hr class="seperator">
+          <a href="#" class="links"><span class="iconify" data-icon="ic:baseline-video-library" style="font-size:24px;margin: 15px;" ></span>Library</span></a>
+          <a href="#" class="links"><span class="iconify" data-icon="ic:twotone-history" style="font-size:24px;margin: 15px;"></span>History</a>
+          <a href="#" class="links"><span class="iconify" data-icon="akar-icons:video" style="font-size:24px;margin: 15px;"></span>Your videos</a>
+          <a href="#" class="links"><span class="iconify" data-icon="ic:outline-watch-later" style="font-size:24px;margin: 15px;"></span>Watch Later</a>
+          <a href="#" class="links"><span class="iconify" data-icon="ant-design:like-outlined" style="font-size:24px;margin: 15px;"></span>Liked</a>
+          <a href="#" class="links"><span class="iconify" data-icon="ic:baseline-expand-more" style="font-size:24px;margin: 15px;"></span>Show more</a>
+       </div>
+        
+       <!-- ----------------------- -->
+  <div id="box">
+
+
+
+    <div id="filters">
+      <button id="filter-opt">all</button>
+      <button id="filter-opt">Music</button>
+      <button id="filter-opt">si-fi</button>
+      <button id="filter-opt">css</button>
+      <button id="filter-opt">trailer</button>
+      <button id="filter-opt">tamil</button>
+      <button id="filter-opt">motivation</button>
+      <button id="filter-opt">cooking</button>
+      <button id="filter-opt">blogger</button>
+      <button id="filter-opt">modified bike</button>
+      <button id="filter-opt">web developer</button>
+  </div>
+
+  <!-- ---------- -->
+        <div id="searchResults"></div>
+  </div>
+       
+  
+      </div>
+     
+  </body>
+</html>
+
+<script>
+  let API = "AIzaSyA2YZKo5xi7ONczJP8MGGl2a98QQn-nC5o";
+
+  let searchResultsDiv = document.getElementById("searchResults");
+
+  // ------------------------get data form api-------------------
+  const searchVideos = async () => {
+    try {
+      let input = document.getElementById("searchTerm").value;
+
+      let res = await fetch(
+        `https://youtube.googleapis.com/youtube/v3/search?q=${input}&key=${API}&type=video&maxResults=20&part=snippet`
+      );
+
+      let data = await res.json();
+      console.log("data:", data);
+
+      let videosList = data.items;
+
+      displayData(videosList);
+    } catch (err) {
+      console.log("err:", err);
+    }
+  };
+  // --------------------------------display data--------------
+  const displayData = (videosArray) => {
+    // [{},{},{}]
+    console.log("data :", videosArray);
+    searchResultsDiv.innerHTML = "";
+    videosArray.forEach((video) => {
+     
+      //console.log(video);
+      //let videoId  = video.id.videoId;
+      //console.log(videoId);
+
+      const {
+        id: { videoId },
+      } = video;
+
+      let videoCard = document.createElement("div");
+// ------------------------
+      let iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube.com/embed/${videoId}`;
+      //iframe.allowfullscreen = "true";
+
+      iframe.setAttribute("allowfullscreen", true);
+      iframe.width = "100%";
+
+  // ---------------------
+
+      let title1 = document.createElement("p");
+      title1.innerText = video.snippet.title;
+
+      
+// ----------------------
+
+      videoCard.append(iframe,title1);
+
+      searchResultsDiv.append(videoCard);
+    });
+
+    //create an i frame;
+    // using the videosId ; you gonna embed the youtube videos into our application;
+  };
+</script>
