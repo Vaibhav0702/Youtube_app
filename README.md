@@ -2,20 +2,20 @@
   
  Youtube is a video-streaming platform used by creators across the globe to publish original content.
 
-#Features of the Project
+# Features of the Project
 
 
 1. Recommended tags on nav bar.
 2. Video owner details and thumbnails.
 3. search and see videos online.
 
-#Tech Stacks used in this Projects
+# Tech Stacks 
 
 1. HTML
 2. CSS
 3. JavaScript (Youtube Api used to Fetch data )
 
-#Let's visit the Site and explore it's feature
+# Let's visit the Site and explore it's feature
                                                                                     
   <table>
     <tr>
